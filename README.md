@@ -1,12 +1,19 @@
-# Fleetcraft
+<p align="center">
+  <img src="assets/logo.svg" width="132" alt="Fleetcraft logo">
+</p>
 
-The craft of keeping GPU fleets honestly busy on shared HPC.
+<h1 align="center">Fleetcraft</h1>
 
-![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)
-![status: field-tested](https://img.shields.io/badge/status-field--tested-brightgreen.svg)
-![systems: Slurm | A100 | H100 | GH200 | GB200](https://img.shields.io/badge/systems-Slurm%20%7C%20A100%20%7C%20H100%20%7C%20GH200%20%7C%20GB200-555555.svg)
+<p align="center"><em>The craft of keeping GPU fleets honestly busy on shared HPC.</em></p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License MIT"> <img src="https://img.shields.io/badge/status-field--tested-brightgreen.svg" alt="status: field-tested"> <img src="https://img.shields.io/badge/systems-Slurm%20%7C%20A100%20%7C%20H100%20%7C%20GH200%20%7C%20GB200-555555.svg" alt="systems: Slurm | A100 | H100 | GH200 | GB200">
+</p>
 
 Fleetcraft is an evidence-backed operating library for GPU video training, inference, evaluation, and asynchronous post-training on shared Slurm systems. It turns lessons from production projects into reusable queue workers, telemetry, scheduler templates, analysis utilities, and task-focused operating guides. For the narrative behind the design, read the companion post, [Fleetcraft: GPU Infrastructure Notes from Three Video-Generation Projects](https://shreshthsaini.github.io/blogs/gpu-infra-for-video-gen.html).
+
+> [!IMPORTANT]
+> **Fleetcraft is a work in progress.** The infrastructure is evolving, and I am actively working to make it better, more generalizable, and more usable. Use it, break it, and contribute back: the shared goal is properly utilized infrastructure with no downtime and no wasted allocated compute.
 
 ## What is inside
 
@@ -107,25 +114,28 @@ python3 infra/python/plot_compute_usage.py \
   --output-dir out/compute --tag forcing-laws
 ```
 
-## Status and contributing
+For live interactive monitoring during operations, [all-smi](https://github.com/lablup/all-smi) (Lablup, Apache-2.0) pairs well with the durable CSV logging here: it gives real-time per-GPU, per-node, and cluster views in the terminal, while `bin/gpu_telemetry.sh` produces the archival traces that the analysis scripts consume.
 
-Fleetcraft is a work in progress. The infrastructure is still evolving, and I
-am actively working to make it better, more generalizable, and more usable
-beyond the systems it grew up on. Feel free to contribute: issues,
-corrections, hardened scripts, new skills, and ports to other schedulers are
-all welcome.
 
-## Provenance and honesty
 
-Fleetcraft is evidence-first. Measured claims point to preserved records, estimates are labeled as estimates, and completion requires canonical payloads rather than optimistic markers. The library is field-tested, but it remains a work in progress toward better useful utilization across changing workloads and systems.
 
-## Adaptation and permission
+## Roadmap
 
-Some examples reflect TACC paths, commands, and operating constraints. Adapt partitions, accounts, storage roots, limits, and authentication to your site. Ask your cluster or infrastructure operators for permission before running fleet automation, telemetry, or login-node tooling on shared systems.
+- [ ] Generalize defaults beyond TACC so the templates run unmodified on more Slurm sites
+- [ ] Live estimated-MFU tracking inside the telemetry summary, not only post hoc
+- [ ] An end-to-end example project: enqueue, generate, score, summarize, plot
+- [ ] First-class all-smi integration for live fleet views next to the archival CSVs
+- [ ] Preemption and spot-style recovery drills for the spool workers
+- [ ] Shellcheck and pytest CI on every script
+- [ ] Ports of the worker loop to PBS and other schedulers
 
 ## Acknowledgments
 
 Developed through work on TACC Vista and Lonestar6 via the Institute for Foundations of Machine Learning (IFML).
+
+## A note on scope, honesty, and use
+
+This library is evolving and contributions are welcome; issues, corrections, hardened scripts, new skills, and ports to other schedulers all help. Every number that appears in the documentation traces to an archived artifact, estimated quantities are labeled as estimates, and the utilization we report is honest rather than flattering; the whole point is closing the gap between allocated and useful compute. The specifics grew up on TACC systems, so adapt paths, partitions, and policies to your own site, and always ask your cluster or infrastructure operators for permission before running fleet automation, telemetry, or login-node tooling on shared systems.
 
 ## Citation
 

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Fleetcraft logo">
+  <title>Fleetcraft</title>
+  <!-- queue loop: the flow of work around the fleet -->
+  <path d="M 120 22 A 98 98 0 1 1 22 120" fill="none" stroke="#2563eb" stroke-width="10" stroke-linecap="round"/>
+  <path d="M 22 120 L 10 100 M 22 120 L 42 112" fill="none" stroke="#2563eb" stroke-width="10" stroke-linecap="round"/>
+  <!-- heterogeneous node blocks: 2x2, 1x3, single -->
+  <g>
+    <rect x="66" y="66" width="34" height="34" rx="8" fill="#2563eb"/>
+    <rect x="106" y="66" width="34" height="34" rx="8" fill="#2563eb"/>
+    <rect x="66" y="106" width="34" height="34" rx="8" fill="#2563eb"/>
+    <rect x="106" y="106" width="34" height="34" rx="8" fill="#93c5fd"/>
+  </g>
+  <g>
+    <rect x="146" y="66" width="28" height="28" rx="7" fill="#0f172a"/>
+    <rect x="146" y="100" width="28" height="28" rx="7" fill="#0f172a"/>
+    <rect x="146" y="134" width="28" height="28" rx="7" fill="#475569"/>
+  </g>
+  <rect x="66" y="146" width="28" height="28" rx="7" fill="#f59e0b"/>
+</svg>
