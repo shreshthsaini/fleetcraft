@@ -120,16 +120,17 @@ For live interactive monitoring during operations, [all-smi](https://github.com/
 
 
 
-## Roadmap
+## To-do
 
-- [x] Initial release: task-routed skills, queue workers, telemetry, Slurm templates, and the evidence docs (July 2026)
-- [x] Companion blog post with measured fleet-utilization traces and estimated MFU analysis (July 2026)
-- [x] Anonymized telemetry archive with byte-reproducible figures
-- [x] all-smi live-monitoring recipe for Slurm allocations
+- [x] Build the core library: task-routed skills, queue workers, telemetry, and Slurm templates
+- [x] Launch the companion blog post (July 2026)
+- [x] Open-source the library and make this repository public (July 2026)
+- [x] Ship the anonymized telemetry archive with reproducible figures
+- [x] Add the all-smi live-monitoring recipe
 - [ ] End-to-end example project: enqueue, generate, score, summarize, plot
-- [ ] Live estimated-MFU tracking inside the telemetry summary
-- [ ] Generalized defaults and worker ports beyond TACC and Slurm
-- [ ] Preemption-recovery drills and CI across the scripts
+- [ ] Live estimated-MFU tracking in the telemetry summary
+- [ ] Generalize defaults beyond TACC and port the workers past Slurm
+- [ ] Add CI (shellcheck and pytest) across the scripts
 
 ## Acknowledgments
 
